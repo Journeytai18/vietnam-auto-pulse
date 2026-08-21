@@ -25,12 +25,12 @@ const toast = document.querySelector('#toast');
 function notify(message) { toast.textContent = message; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2300); }
 
 document.querySelector('#viewAllBtn').addEventListener('click', () => { expanded = !expanded; renderBrands(); });
-document.querySelector('#menuBtn').addEventListener('click', () => document.querySelector('.sidebar').classList.toggle('open'));
+document.querySelector('#menuBtn')?.addEventListener('click', () => document.querySelector('.sidebar')?.classList.toggle('open'));
 document.querySelectorAll('.nav-item').forEach(item => item.addEventListener('click', () => {
   document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active')); item.classList.add('active');
   document.querySelector('.sidebar').classList.remove('open');
 }));
-document.querySelector('#subscribeBtn').addEventListener('click', () => openModal('<h3>Monday market brief</h3><p>Get the newest sales, policy, and powertrain signals with direct source links.</p><input id="emailInput" type="email" placeholder="you@company.com"><button class="modal-action" id="confirmSubscribe">Subscribe</button>'));
+document.querySelector('#subscribeBtn')?.addEventListener('click', () => openModal('<h3>Monday market brief</h3><p>Get the newest sales, policy, and powertrain signals with direct source links.</p><input id="emailInput" type="email" placeholder="you@company.com"><button class="modal-action" id="confirmSubscribe">Subscribe</button>'));
 document.querySelector('#exportBtn').addEventListener('click', () => { window.print(); notify('Print dialog opened — save as PDF to export.'); });
 document.querySelector('#segmentSelect').addEventListener('change', e => notify(`${e.target.value} view is ready for a live data connection.`));
 document.querySelector('#searchInput').addEventListener('input', e => {
@@ -63,7 +63,7 @@ function showMenu(anchor, actions) {
 }
 document.querySelector('#notificationBtn').addEventListener('click', e => showMenu(e.currentTarget, ['July sales report published', 'Forecast model updated', 'New EV policy source']));
 document.querySelector('#dateBtn').addEventListener('click', e => showMenu(e.currentTarget, ['Latest · 21 Aug 2026', 'July 2026', 'H1 2026']));
-document.querySelector('#profileBtn').addEventListener('click', e => showMenu(e.currentTarget, ['Profile settings', 'Dashboard preferences', 'Sign out']));
+document.querySelector('#profileBtn')?.addEventListener('click', e => showMenu(e.currentTarget, ['Profile settings', 'Dashboard preferences', 'Sign out']));
 document.querySelectorAll('.more').forEach(button => button.addEventListener('click', e => showMenu(e.currentTarget, ['Download card data', 'Copy source link', 'Create alert'])));
 popover.addEventListener('click', e => {
   if (!e.target.dataset.action) return;
