@@ -78,3 +78,16 @@ document.querySelectorAll('.scenario').forEach(button => button.addEventListener
 }));
 modalContent.addEventListener('click', e => { if (e.target.id === 'modalDone') closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); popover.classList.remove('show'); } });
+
+const topicButtons = document.querySelectorAll('.topic-nav button');
+topicButtons.forEach(button => button.addEventListener('click', () => {
+  const target = document.getElementById(button.dataset.topic);
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}));
+const topicTargets = [...topicButtons].map(button => document.getElementById(button.dataset.topic)).filter(Boolean);
+const topicObserver = new IntersectionObserver(entries => {
+  const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+  if (!visible) return;
+  topicButtons.forEach(button => button.classList.toggle('active', button.dataset.topic === visible.target.id));
+}, { rootMargin: '-20% 0px -65% 0px', threshold: [0, .1, .4] });
+topicTargets.forEach(target => topicObserver.observe(target));
