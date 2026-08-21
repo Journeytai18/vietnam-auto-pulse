@@ -8,36 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260821-2" />
+  <link rel="stylesheet" href="styles.css?v=20260821-3" />
 </head>
 <body>
   <div class="app-shell">
-    <aside class="sidebar">
-      <a class="brand" href="#"><span class="brand-mark">A</span><span>AutoPulse<span class="brand-vn">VN</span></span></a>
-      <nav>
-        <p class="nav-label">Workspace</p>
-        <a class="nav-item active" href="#overview"><span>⌂</span>Overview</a>
-        <a class="nav-item" href="#brands"><span>◎</span>Brands</a>
-        <a class="nav-item" href="#segments"><span>◫</span>Segments</a>
-        <a class="nav-item" href="#signals"><span>↗</span>Market signals</a>
-        <a class="nav-item" href="#motors"><span>⚙</span>Motors</a>
-        <a class="nav-item" href="#forecast"><span>◒</span>5-year forecast</a>
-        <p class="nav-label">Research</p>
-        <a class="nav-item" href="#news"><span>◇</span>News monitor</a>
-        <a class="nav-item" href="#reports"><span>▤</span>Saved reports</a>
-      </nav>
-      <div class="sidebar-card">
-        <span class="pulse-dot"></span>
-        <strong>Market brief</strong>
-        <p>Get the essential shifts in your inbox every Monday.</p>
-        <button id="subscribeBtn">Subscribe</button>
-      </div>
-      <div class="profile"><div class="avatar">TL</div><div><strong>Market analyst</strong><small>Strategy team</small></div><button id="profileBtn">•••</button></div>
-    </aside>
-
     <main>
       <header class="topbar">
-        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+        <a class="top-brand" href="#overview"><span class="brand-mark">A</span><span>AutoPulse<b>VN</b></span></a>
         <div class="search"><span>⌕</span><input id="searchInput" placeholder="Search brands, models, signals..." /><kbd>⌘ K</kbd></div>
         <div class="top-actions"><button class="icon-btn" id="notificationBtn">◌</button><button class="date-btn" id="dateBtn"><span>◷</span> <em>Latest · 21 Aug 2026</em> <span>⌄</span></button><button class="export-btn" id="exportBtn">⇩ Export report</button></div>
       </header>
@@ -136,6 +113,6 @@
   <div class="modal-backdrop" id="modalBackdrop"><div class="modal"><button class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div></div>
   <div class="popover" id="popover"></div>
   <div class="toast" id="toast"></div>
-  <script src="app.js?v=20260821-2"></script>
+  <script src="app.js?v=20260821-3"></script>
 </body>
 </html>
